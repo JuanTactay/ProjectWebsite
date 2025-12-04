@@ -9,7 +9,12 @@ function saveCart(cart) {
 function updateCartCount() {
   const cart = getCart();
   const count = cart.reduce((sum, i) => sum + i.quantity, 0);
-  document.querySelectorAll("#cart-count").forEach(el => el.textContent = count);
+
+  // Updates every cart count element on the page
+  document
+    .querySelectorAll("#cart-count")
+    .forEach((el) => (el.textContent = count));
 }
 
+// Run on page load
 document.addEventListener("DOMContentLoaded", updateCartCount);
