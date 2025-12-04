@@ -83,75 +83,42 @@ nav a:hover::after {
    HERO SECTION
 ============================= */
 .hero {
-  background: url('banner.jpg') center/cover no-repeat;
-  height: 70vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  animation: fadeIn 1s ease forwards;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  text-shadow: 0 0 20px rgba(230, 57, 70, 0.6);
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #ccc;
-  max-width: 600px;
-}
-
-.cta {
-  background: #e63946;
-  color: #fff;
-  padding: 12px 30px;
-  border-radius: 12px;
-  text-decoration: none;
-  margin-top: 20px;
-  font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s;
-}
-
-.cta:hover {
-  background: #ff4757;
-  transform: scale(1.05);
-}
-.hero {
   position: relative;
   height: 90vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
   text-align: center;
   overflow: hidden;
-  background: black; /* fallback if video doesn't load */
+  background-color: black; /* Fallback color */
 }
- 
+
 .hero-content {
   position: relative;
   z-index: 2;
   animation: fadeInUp 1.5s ease;
 }
- 
+
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
   letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(230, 57, 70, 0.6);
 }
- 
+
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  color: #ccc;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
- 
+
 .btn {
-  background: #ff4500;
+  background: #e63946;
   padding: 12px 28px;
   border-radius: 30px;
   color: white;
@@ -159,12 +126,12 @@ nav a:hover::after {
   text-decoration: none;
   transition: background 0.3s, transform 0.2s;
 }
- 
+
 .btn:hover {
-  background: #ff6600;
+  background: #ff4757;
   transform: scale(1.05);
 }
- 
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -174,6 +141,18 @@ nav a:hover::after {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Background video setup */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Behind content */
+  filter: brightness(0.4);
 }
 
 /* =============================
@@ -337,7 +316,6 @@ form button {
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-	
 }
 
 form button:hover {
@@ -402,15 +380,4 @@ footer {
   padding: 20px 0;
   margin-top: 40px;
   border-top: 1px solid #222;
-}
-/* Background video setup */
-.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* ensures video fills the section */
-  z-index: -1; /* sends video behind hero text */
-  filter: brightness(0.4); /* darkens it slightly for text visibility */
 }
