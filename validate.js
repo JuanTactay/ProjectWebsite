@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const messageInput = document.getElementById("message");
   const formMessage = document.getElementById("form-message");
 
+  if (!form) return; // Exit if form doesn't exist
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -30,7 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // If all is good
-    showMessage("✅ Thank you! Your message has been sent successfully.", "success");
+    showMessage(
+      "✅ Thank you! Your message has been sent successfully.",
+      "success"
+    );
     form.reset();
   });
 
